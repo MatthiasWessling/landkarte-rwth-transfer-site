@@ -1,0 +1,91 @@
+/**
+ * RWTH Aachen CMS / Corporate Design tokens
+ * Source: Contentserver core.css (rwth-aachen.de/custom/rwth/resources/css/core.css)
+ *         + Corporate Design Farbwelt (HKS 44 / extended palette, 2013)
+ *
+ * House font: Plain (Swiss Typefaces) — same files as the central CMS.
+ * Fallback matches CMS: Arial, sans-serif.
+ * Colours use official hex values (blue scale, black/grey, secondary magenta/yellow,
+ * and selected extended hues already used for Transfer Barometer filters).
+ */
+@font-face {
+  font-family: Plain;
+  src: url("fonts/plain-ultralight.woff2") format("woff2");
+  font-weight: 200 280;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plain;
+  src: url("fonts/plain-light.woff2") format("woff2");
+  font-weight: 300 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plain;
+  src: url("fonts/plain-medium.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plain;
+  src: url("fonts/plain-light-italic.woff2") format("woff2");
+  font-weight: 300 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plain;
+  src: url("fonts/plain-medium-italic.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* CMS core.css */
+  --clr-blue: #00549f;
+  --clr-blue-75: #407fb7;
+  --clr-blue-50: #8ebae5;
+  --clr-blue-25: #c7ddf2;
+  --clr-blue-10: #e8f1fa;
+  --clr-red: #cc071e;
+  --clr-red-25: #f2c1c7;
+  --clr-yellow: #ffed00;
+  --clr-yellow-soft: #f0f3d0;
+  --clr-black: #000000;
+  --clr-gray-75: #646567;
+  --clr-gray-50: #9c9e9f;
+  --clr-gray-25: #cfd1d2;
+  --clr-gray-7: #eceded;
+  --clr-white: #ffffff;
+  --clr-page: #e7e7e7;
+
+  /* CD secondary + extended (Farbwelt) */
+  --clr-magenta: #e30066;
+  --clr-green: #57ab27;
+  --clr-petrol: #006165;
+  --clr-turquoise: #0098a1;
+  --clr-orange: #f6a800;
+  --clr-violet: #612158;
+  --clr-lilac: #7a6fac;
+
+  /* Portal aliases (existing component CSS) */
+  --rwth-blue: var(--clr-blue);
+  --rwth-blue-deep: #003d73;
+  --rwth-blue-bar: var(--clr-blue);
+  --rwth-teal: var(--clr-green);
+  --ink: var(--clr-black);
+  --muted: var(--clr-gray-75);
+  --panel: var(--clr-blue-10);
+  --line: var(--clr-blue-50);
+  --line-soft: var(--clr-blue-25);
+  --page-bg: var(--clr-page);
+  --shadow: 0 18px 50px rgba(0, 84, 159, 0.14);
+  --focus-ring: var(--clr-blue);
+  --focus-accent: var(--clr-orange);
+
+  --font-rwth: Plain, Arial, Helvetica, sans-serif;
+}

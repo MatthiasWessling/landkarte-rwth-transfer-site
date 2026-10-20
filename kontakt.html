@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt — Transferlandschaft</title>
+  <link rel="stylesheet" href="assets/rwth-cms.css" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="site-body" data-site-page="contact">
+  <a class="site-skip" href="#content" data-i18n="skipContent">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" data-nav="home" href="index.html">
+        <strong data-i18n="siteBrandTitle">Transferlandschaft</strong>
+        <span data-i18n="siteBrandSubtitle">der RWTH Aachen University</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a data-nav="home" href="index.html" data-i18n="navHome">Startseite</a>
+        <a data-nav="map" href="landkarte.html" data-i18n="navMap">Transfer-Landkarte</a>
+        <a data-nav="contact" href="kontakt.html" data-i18n="navContact">Kontakt</a>
+      </nav>
+      <div class="site-header-tools">
+        <div class="site-lang" id="lang-switch" role="group" aria-label="Sprache">
+          <button type="button" id="lang-de" aria-pressed="true" lang="de">DE</button>
+          <span class="sep" aria-hidden="true">|</span>
+          <button type="button" id="lang-en" aria-pressed="false" lang="en">EN</button>
+        </div>
+        <div class="site-wordmark" aria-hidden="true">
+          <div class="site-wordmark-text" data-i18n="wordmark">RWTH Aachen University</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main" id="content" tabindex="-1">
+    <div class="site-prose">
+      <h1 data-i18n="contactTitle">Kontakt</h1>
+      <p data-i18n="contactIntro">
+        RWTH Innovation ist die zentrale Anlaufstelle für Transfer an der RWTH: für Forschende, Gründungsinteressierte und Unternehmen.
+      </p>
+      <p class="muted" data-i18n="contactNote">
+        RWTH Innovation GmbH · Campus-Boulevard 57 · 52074 Aachen · info@rwth-innovation.de · +49 241 80 96610
+      </p>
+      <div class="site-cta-row">
+        <a class="site-btn site-btn--primary" id="contact-external" href="https://www.rwth-innovation.de/de/" target="_blank" rel="noopener noreferrer" data-i18n="contactExternal">
+          rwth-innovation.de →
+        </a>
+        <a class="site-btn site-btn--ghost" data-lang-link="landkarte.html?id=rwth-innovation" href="landkarte.html?id=rwth-innovation" data-i18n="contactMapLink">
+          Auf der Landkarte →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span data-i18n="footerPrototype">Prototyp — keine offizielle RWTH-Veröffentlichung</span>
+      <div class="site-footer-links">
+        <a href="#" data-i18n="footerImprint">Impressum</a>
+        <a href="#" data-i18n="footerPrivacy">Datenschutz</a>
+        <a data-lang-link="accessibility.html" href="accessibility.html" data-i18n="a11yLink">Erklärung zur Barrierefreiheit</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/i18n.js"></script>
+  <script src="assets/site-i18n.js"></script>
+  <script src="assets/site-chrome.js"></script>
+  <script>
+    window.TRANSFER_SITE.initPortal(function (lang) {
+      var ext = document.getElementById("contact-external");
+      if (ext) {
+        ext.href = lang === "en"
+          ? "https://www.rwth-innovation.de/en/"
+          : "https://www.rwth-innovation.de/de/";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erklärung zur Barrierefreiheit — RWTH Transfer-Landkarte</title>
+  <link rel="stylesheet" href="assets/rwth-cms.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-rwth);
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 10% 0%, var(--clr-blue-10) 0%, transparent 45%),
+        linear-gradient(180deg, var(--clr-blue-25) 0%, var(--clr-page) 100%);
+      min-height: 100dvh;
+      line-height: 1.55;
+    }
+    .skip-link {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      z-index: 100;
+      transform: translateY(-120%);
+      background: var(--rwth-blue-deep);
+      color: #fff;
+      padding: 0.55rem 0.9rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 3px solid var(--focus-accent);
+      outline-offset: 2px;
+    }
+    :focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1.25rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .bar a {
+      color: var(--rwth-blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .bar a:hover { text-decoration: underline; }
+    .bar .brand {
+      font-family: var(--font-rwth);
+      color: var(--rwth-blue-deep);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .bar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.15rem;
+      border: 1px solid #b7c8da;
+      border-radius: 8px;
+      background: #f7fafc;
+    }
+    .lang-switch button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--rwth-blue-deep);
+      border-radius: 6px;
+      padding: 0.32rem 0.55rem;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      min-width: 2.1rem;
+    }
+    .lang-switch button:hover { background: #eef4fb; }
+    .lang-switch button[aria-pressed="true"] {
+      background: var(--rwth-blue);
+      color: #fff;
+    }
+    .lang-switch button:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 1px;
+    }
+    main {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 2rem 1.35rem 3.5rem;
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: var(--font-rwth);
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      color: var(--rwth-blue-deep);
+      line-height: 1.2;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 1.75rem;
+    }
+    h2 {
+      margin: 1.75rem 0 0.55rem;
+      font-size: 1.08rem;
+      color: var(--rwth-blue-deep);
+    }
+    p, li { font-size: 0.98rem; color: #2c3a4a; }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.35rem; }
+    .note {
+      margin: 1.25rem 0;
+      padding: 0.85rem 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 0.92rem;
+    }
+    .panel[hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content" id="skip-content">Zum Inhalt springen</a>
+  <header class="bar">
+    <a id="back-link" href="landkarte.html">← Zurück zur Landkarte</a>
+    <div class="bar-actions">
+      <div class="lang-switch" id="lang-switch" role="group" aria-label="Sprache">
+        <button type="button" id="lang-de" aria-pressed="true" lang="de">DE</button>
+        <button type="button" id="lang-en" aria-pressed="false" lang="en">EN</button>
+      </div>
+      <div class="brand" id="brand-title">RWTH Transfer-Landkarte</div>
+    </div>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <div id="panel-de" class="panel" lang="de">
+      <h1>Erklärung zur Barrierefreiheit</h1>
+      <p class="meta">Stand: 5. August 2026 · Prototyp (noch keine offizielle RWTH-Veröffentlichung)</p>
+
+      <div class="note">
+        Diese Seite ist ein <strong>Arbeitsprototyp</strong>. Die Erklärung beschreibt den
+        aktuellen technischen Stand und bekannte Einschränkungen. Eine formale BITV-Prüfung
+        durch eine unabhängige Stelle steht noch aus.
+      </div>
+
+      <h2>Geltungsbereich</h2>
+      <p>
+        Diese Erklärung gilt für den Prototyp der Transferlandschaft
+        (<code>index.html</code>, <code>landkarte.html</code>, Detailseiten, diese Erklärung). Zielstandard:
+        <strong>BITV 2.0</strong> bzw. <strong>WCAG 2.1 Stufe AA</strong>.
+      </p>
+
+      <h2>Maßnahmen zur Barrierefreiheit</h2>
+      <ul>
+        <li>Erkunden-Liste als textuelle Alternative zu den Grafik-Knoten (Suche und Filter)</li>
+        <li>Tastaturbedienung: Skip-Links, Fokusführung in Dialogen, Escape zum Schließen</li>
+        <li>Kartensteuerung per Tastatur (Enter/Pfeile zwischen Knoten, Umschalt+Pfeile verschieben, Plus/Minus, Pos1), wenn die Karte fokussiert ist</li>
+        <li>Erkunden-Leiste nach APG: Suche Home/Ende = Cursor, ↓ zur Liste; Filter nur ←→ (↑ Suche, ↓ Liste); Liste ↑↓/Pos1/Ende; im Detailpanel ←→ zum vorherigen/nächsten Knoten</li>
+        <li>Live-Region für Such- und Filterergebnisse</li>
+        <li>Berücksichtigung von <code>prefers-reduced-motion</code></li>
+        <li>Detailseiten mit Semantik (Überschriften, Landmarken)</li>
+        <li>Zweisprachige Oberfläche (DE/EN) mit Umschalter und <code>lang</code>-Attribut</li>
+      </ul>
+
+      <h2>Bekannte Einschränkungen</h2>
+      <ul>
+        <li>
+          Die Landschaftsgrafik ist ein <strong>Rasterbild (PNG)</strong> und derzeit noch
+          die <strong>englische</strong> Fassung. Beschriftungen auf dem Bild sind keine echten
+          Texte; Screenreader erhalten den Alternativtext und die Erkunden-Liste. Eine
+          deutsch-/englischsprachige SVG-Landkarte ist geplant.
+        </li>
+        <li>
+          UI und Knoteninhalte (Pop-ups, Detailseiten) sind <strong>zweisprachig (DE/EN)</strong>
+          mit Umschalter; Standardsprache ist Deutsch (<code>?lang=de|en</code>, localStorage).
+          Markennamen und Fachbegriffe bleiben oft unübersetzt.
+        </li>
+        <li>
+          Platzhaltertexte (Lorem) an einzelnen Knoten sind noch nicht inhaltlich barrierefrei
+          im Sinne vollständiger Information.
+        </li>
+        <li>
+          Eine externe BITV-/WCAG-Konformitätsbewertung wurde noch nicht durchgeführt.
+          Automatisierte axe-core-Scans (August 2026) dienten der Entwicklungsabsicherung.
+        </li>
+      </ul>
+
+      <h2>Feedback und Kontakt</h2>
+      <p>
+        Hinweise zu Barrieren bitte an das Projektteam der Transfer-Landkarte richten
+        (über den üblichen RWTH-Transfer-Kontaktkanal, sobald der Prototyp öffentlich angebunden ist).
+        Für diesen lokalen Prototyp: Issues im zugehörigen GitHub-Repository.
+      </p>
+
+      <h2>Durchsetzung</h2>
+      <p>
+        Sobald der Dienst als öffentliches Angebot der RWTH Aachen University betrieben wird,
+        gelten die üblichen Durchsetzungsverfahren nach dem Behindertengleichstellungsgesetz
+        und der BITV NRW / des Landes. Bis dahin handelt es sich um einen internen Prototyp.
+      </p>
+    </div>
+
+    <div id="panel-en" class="panel" lang="en" hidden>
+      <h1>Accessibility statement</h1>
+      <p class="meta">Updated: 5 August 2026 · Prototype (not an official RWTH publication)</p>
+
+      <div class="note">
+        This page is a <strong>working prototype</strong>. The statement describes the current
+        technical state and known limitations. A formal BITV audit by an independent body
+        has not yet been carried out.
+      </div>
+
+      <h2>Scope</h2>
+      <p>
+        This statement covers the interactive Transfer Landscape prototype
+        (<code>index.html</code>, <code>landkarte.html</code>, detail pages, this statement). Target standard:
+        <strong>BITV 2.0</strong> / <strong>WCAG 2.1 Level AA</strong>.
+      </p>
+
+      <h2>Accessibility measures</h2>
+      <ul>
+        <li>Explore list as a text alternative to graphic nodes (search and filter)</li>
+        <li>Keyboard use: skip links, focus management in dialogs, Escape to close</li>
+        <li>Map keyboard controls (Enter/arrows between nodes, Shift+arrows pan, plus/minus, Home) when the map is focused</li>
+        <li>Explore rail (APG-aligned): search Home/End = caret, ↓ to list; filters ←→ only (↑ search, ↓ list); list ↑↓/Home/End; detail panel ←→ for previous/next node</li>
+        <li>Live region for search and filter results</li>
+        <li>Respect for <code>prefers-reduced-motion</code></li>
+        <li>Detail pages with semantic structure (headings, landmarks)</li>
+        <li>Bilingual UI (DE/EN) with a language switcher and <code>lang</code> attribute</li>
+      </ul>
+
+      <h2>Known limitations</h2>
+      <ul>
+        <li>
+          The landscape graphic is a <strong>raster image (PNG)</strong> and currently the
+          <strong>English</strong> version. Labels on the image are not real text; screen
+          readers get the alt text and the Explore list. German/English SVG maps are planned.
+        </li>
+        <li>
+          UI and node copy (pop-ups, detail pages) are <strong>bilingual (DE/EN)</strong>
+          with a switcher; default language is German (<code>?lang=de|en</code>, localStorage).
+          Brand names and strategy terms are often left untranslated.
+        </li>
+        <li>
+          Placeholder (lorem) copy on some nodes is not yet informationally complete.
+        </li>
+        <li>
+          No external BITV/WCAG conformance assessment yet. Automated axe-core scans
+          (August 2026) supported development checks.
+        </li>
+      </ul>
+
+      <h2>Feedback and contact</h2>
+      <p>
+        Please send accessibility feedback to the Transfer Landscape project team
+        (via the usual RWTH transfer contact channel once the prototype is publicly linked).
+        For this local prototype: issues in the related GitHub repository.
+      </p>
+
+      <h2>Enforcement</h2>
+      <p>
+        Once the service is operated as a public offering of RWTH Aachen University,
+        the usual enforcement procedures under disability equality law and BITV NRW /
+        state rules apply. Until then this remains an internal prototype.
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/i18n.js"></script>
+  <script>
+    (function () {
+      const I18N = window.TRANSFER_I18N;
+      let lang = I18N.detectLang();
+      I18N.setLang(lang);
+
+      const langDe = document.getElementById("lang-de");
+      const langEn = document.getElementById("lang-en");
+      const panelDe = document.getElementById("panel-de");
+      const panelEn = document.getElementById("panel-en");
+      const backLink = document.getElementById("back-link");
+      const brand = document.getElementById("brand-title");
+      const skip = document.getElementById("skip-content");
+      const langSwitch = document.getElementById("lang-switch");
+
+      function apply() {
+        const t = I18N.ui(lang);
+        document.documentElement.lang = lang;
+        document.title = t.a11yDocTitle;
+        brand.textContent = t.brandTitle;
+        skip.textContent = t.skipContent;
+        backLink.textContent = t.backLandscape;
+        backLink.href = I18N.withLangParam("landkarte.html", lang);
+        langSwitch.setAttribute("aria-label", t.langSwitchLabel);
+        langDe.setAttribute("aria-pressed", String(lang === "de"));
+        langEn.setAttribute("aria-pressed", String(lang === "en"));
+        panelDe.hidden = lang !== "de";
+        panelEn.hidden = lang !== "en";
+        const url = new URL(location.href);
+        url.searchParams.set("lang", lang);
+        history.replaceState(null, "", url);
+      }
+
+      langDe.addEventListener("click", function () {
+        lang = I18N.setLang("de");
+        apply();
+      });
+      langEn.addEventListener("click", function () {
+        lang = I18N.setLang("en");
+        apply();
+      });
+
+      apply();
+    })();
+  </script>
+</body>
+</html>

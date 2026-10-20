@@ -1,0 +1,522 @@
+/**
+ * Shared chrome for the Transfer portal (Nachhaltigkeitslandschaft-inspired rhythm).
+ * Colours + typeface: RWTH CMS / Corporate Design — see rwth-cms.css.
+ * Map-specific layout stays in landkarte.html.
+ */
+:root {
+  --site-header-h: 4.25rem;
+  --content-max: 52rem;
+  --wide-max: 68rem;
+}
+
+* { box-sizing: border-box; }
+
+.site-body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-rwth);
+  color: var(--ink);
+  background: var(--page-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.site-body a {
+  color: var(--rwth-blue);
+}
+.site-body a.site-btn--primary {
+  color: #fff;
+}
+.site-body a.site-btn--primary:hover {
+  color: #fff;
+}
+.site-body a.site-chip {
+  color: #fff;
+}
+.site-body a.site-chip:hover {
+  color: #fff;
+}
+
+.site-skip {
+  position: absolute;
+  z-index: 200;
+  left: 0.75rem;
+  top: 0.75rem;
+  transform: translateY(-160%);
+  background: var(--rwth-blue-deep);
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.site-skip:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--focus-accent);
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* —— Header (matches Nachhaltigkeitslandschaft: brand | nav | lang | logo) —— */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  z-index: 40;
+  flex-shrink: 0;
+}
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: var(--site-header-h);
+}
+.site-header--map .site-header-inner {
+  max-width: none;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.site-brand strong {
+  font-family: var(--font-rwth);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--rwth-blue);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.site-brand span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.25;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem 1.1rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover {
+  color: var(--rwth-blue);
+}
+.site-nav a[aria-current="page"] {
+  color: var(--rwth-blue);
+  border-bottom-color: var(--rwth-blue);
+  font-weight: 600;
+}
+
+.site-header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.site-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--rwth-blue-deep);
+}
+.site-lang a,
+.site-lang button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.15rem 0.2rem;
+  text-decoration: none;
+}
+.site-lang a:hover,
+.site-lang button:hover {
+  color: var(--rwth-blue);
+}
+.site-lang a[aria-pressed="true"],
+.site-lang button[aria-pressed="true"],
+.site-lang a[aria-current="true"] {
+  color: var(--rwth-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-lang .sep {
+  color: var(--line);
+  font-weight: 400;
+  user-select: none;
+}
+
+.site-wordmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-left: 0.35rem;
+  border-left: 1px solid var(--line-soft);
+  margin-left: 0.15rem;
+}
+.site-wordmark svg {
+  display: block;
+  height: 2.1rem;
+  width: auto;
+}
+.site-wordmark-text {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--rwth-blue);
+  line-height: 1.15;
+  text-align: right;
+  max-width: 7.5rem;
+}
+
+/* Map page: compact tools next to lang */
+.site-header .map-tool {
+  appearance: none;
+  border: 1px solid #b7c8da;
+  background: #fff;
+  color: var(--rwth-blue-deep);
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.site-header .map-tool:hover {
+  background: #eef4fb;
+}
+
+/* —— Footer —— */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.25rem 1.35rem;
+  flex-shrink: 0;
+}
+.site-footer-inner {
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+.site-footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-footer-links a:hover {
+  color: var(--rwth-blue);
+  text-decoration: underline;
+}
+
+/* —— Narrative Startseite —— */
+.site-main {
+  flex: 1;
+  width: 100%;
+}
+
+.site-hero {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(0, 84, 159, 0.1) 0%, rgba(232, 241, 250, 0.6) 45%, transparent 70%),
+    linear-gradient(180deg, var(--clr-blue-25) 0%, var(--page-bg) 100%);
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+.site-hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% 40% auto -10%;
+  height: 120%;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(0, 84, 159, 0.14), transparent 55%),
+    radial-gradient(ellipse at 70% 60%, rgba(87, 171, 39, 0.08), transparent 50%);
+  pointer-events: none;
+}
+.site-hero-inner {
+  position: relative;
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2.75rem;
+}
+.site-hero-brand {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-rwth);
+  font-size: clamp(1.85rem, 4vw, 2.55rem);
+  font-weight: 700;
+  color: var(--rwth-blue);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.site-hero h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 36rem;
+}
+.site-hero .lede {
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 34rem;
+}
+.site-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+.site-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.site-btn--primary {
+  background: var(--rwth-blue);
+  color: #fff;
+  border-color: var(--rwth-blue);
+}
+.site-btn--primary:hover {
+  background: var(--rwth-blue-deep);
+  border-color: var(--rwth-blue-deep);
+  color: #fff;
+}
+.site-btn--ghost {
+  background: #fff;
+  color: var(--rwth-blue-deep);
+  border-color: var(--line);
+}
+.site-btn--ghost:hover {
+  background: #eef4fb;
+  color: var(--rwth-blue);
+}
+
+/* Dark action strip (filter-bar analogue) */
+.site-action-strip {
+  background: var(--rwth-blue-bar);
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+}
+.site-action-strip-inner {
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+}
+.site-action-strip .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-right: 0.25rem;
+}
+.site-chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.site-chip:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.site-section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1rem;
+}
+.site-section--wide {
+  max-width: var(--wide-max);
+}
+.site-section h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-rwth);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--rwth-blue);
+}
+.site-section p {
+  margin: 0 0 1rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.site-section p.muted {
+  color: var(--muted);
+}
+
+.site-modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  gap: 1.15rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.site-module {
+  background: #fff;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 1.15rem 1.2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.site-module:hover {
+  border-color: var(--line);
+  box-shadow: 0 8px 24px rgba(15, 35, 60, 0.08);
+}
+.site-module h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--rwth-blue-deep);
+  line-height: 1.3;
+}
+.site-module p {
+  margin: 0;
+  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.site-module a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.35rem;
+}
+.site-module a:hover {
+  text-decoration: underline;
+}
+
+.site-invite {
+  max-width: var(--wide-max);
+  margin: 0.5rem auto 3rem;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+}
+.site-invite p {
+  margin: 0 0 1.15rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-invite .site-btn + .site-btn {
+  margin-left: 0.65rem;
+}
+.site-module a + a {
+  margin-top: 0.15rem;
+}
+
+/* Kontakt / simple pages */
+.site-prose {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+.site-prose h1 {
+  margin: 0 0 1rem;
+  font-family: var(--font-rwth);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--rwth-blue);
+}
+.site-prose p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  font-size: 1.02rem;
+}
+.site-prose p.muted,
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .site-header-inner {
+    padding: 0.65rem 1rem;
+  }
+  .site-nav {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+  }
+  .site-wordmark {
+    border-left: none;
+    padding-left: 0;
+  }
+  .site-hero-inner {
+    padding: 2.25rem 1rem 2rem;
+  }
+}
