@@ -37,6 +37,11 @@
       if (key && t[key] != null) el.setAttribute("aria-label", t[key]);
     });
 
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-alt");
+      if (key && t[key] != null) el.setAttribute("alt", t[key]);
+    });
+
     const page = (document.body && document.body.dataset.sitePage) || "";
     document.querySelectorAll("[data-nav]").forEach((a) => {
       const id = a.getAttribute("data-nav");

@@ -28,6 +28,7 @@
         "Für alle Transferaktivitäten ist RWTH Innovation die zentrale Anlaufstelle und das operative Realisierungsinstrument — für Forschende, Gründungsteams und Unternehmen auf dem Weg in die Anwendung.",
       ctaMap: "Zu RWTH Innovation",
       ctaAbout: "Ambition verstehen",
+      ctaDimensions: "Transferfelder verstehen",
       ctaLandscape: "Transfer-Landkarte erkunden",
 
       stripLabel: "Direkt einsteigen",
@@ -43,6 +44,40 @@
         "Transfer ist mehr als die Weitergabe fertiger Ergebnisse. Es ist ein multidimensionaler Prozess: Forschung, Lehre und Anwendung greifen ineinander — interdisziplinär in der Tiefe, transdisziplinär im Dialog mit Partnern aus Gesellschaft und Industrie.",
       aboutP2:
         "Operativ bündelt RWTH Innovation diesen Weg: Verwertung und Schutz von Forschungsergebnissen, Gründungsbegleitung und Kooperation mit der Wirtschaft — damit aus wissenschaftlichen Ideen Anwendung, Partnerschaft und Wirkung werden.",
+
+      dimTitle: "Acht Transferfelder — so lesen Sie die Landkarte",
+      dimIntro:
+        "Die Landkarte folgt der Transfersystematik des Stifterverband-Transferbarometers: acht Felder von industrie- und verwertungsnaher Kooperation bis zu Dialog, Beratung und Lehre. So wird sichtbar, wie unterschiedlich Wissen an der RWTH wirksam wird — nicht nur über Patente und Start-ups.",
+      dimPrereq:
+        "Getragen wird das von institutionellen Voraussetzungen: Strategie, Anreize, Strukturen und Ressourcen.",
+      dimFigAlt: "Kreisdiagramm der acht Transferfelder des Transferbarometers",
+      dimFigCaption: "Transfersystematik des Transferbarometers (Stifterverband)",
+      dimSourceLink: "Quelle",
+      dimMapLink: "Transferfelder auf der Landkarte →",
+      dimCollabTitle: "Forschungsbasierte Kooperation & Verwertung",
+      dimCollabBody:
+        "Gemeinsame Forschung mit Wirtschaft und Partnern — inklusive IP, Lizenzierung und Verwertung.",
+      dimEntreTitle: "Entrepreneurship",
+      dimEntreBody:
+        "Wissenschaftliche Ideen werden zu Gründungen und Geschäftsmodellen — von Ideation bis Scale-up.",
+      dimInfraTitle: "Forschungsinfrastruktur",
+      dimInfraBody:
+        "Labore, Anlagen und Daten als geteilte Infrastruktur für Partner außerhalb der Hochschule.",
+      dimRelTitle: "Relationship Management",
+      dimRelBody:
+        "Langfristige Netzwerke mit Alumni, Fördernden und Partnern — Transfer braucht dauerhafte Beziehungen.",
+      dimSocietyTitle: "Forschen und entwickeln mit der Gesellschaft",
+      dimSocietyBody:
+        "Gemeinsame FuE mit Bürgerinnen und Bürgern, Kommunen und Zivilgesellschaft an realen Herausforderungen.",
+      dimAdviceTitle: "Wissenschaftliche Beratung",
+      dimAdviceBody:
+        "Expertise für Politik, Verwaltung und andere Entscheidungsträgerinnen und -träger.",
+      dimDialogueTitle: "Wissenschaftsdialog",
+      dimDialogueBody:
+        "Offener Austausch: Wissenschaftskommunikation und Dialog mit der Öffentlichkeit.",
+      dimTeachTitle: "Transferorientierte Lehre & Weiterbildung",
+      dimTeachBody:
+        "Praxis, Partner und reale Herausforderungen in Curricula, Schools und Weiterbildung.",
 
       modulesTitle: "Ambition — wohin wir wollen",
       modInnovationTitle: "RWTH Innovation",
@@ -98,6 +133,7 @@
         "For all transfer activities, RWTH Innovation is the central entry point and operational realisation instrument — supporting researchers, founding teams, and companies on the path to application.",
       ctaMap: "Go to RWTH Innovation",
       ctaAbout: "Understand the ambition",
+      ctaDimensions: "Understand the transfer areas",
       ctaLandscape: "Explore the Transfer Landscape",
 
       stripLabel: "Jump in",
@@ -113,6 +149,40 @@
         "Transfer is more than handing over finished results. It is a multidimensional process: research, teaching, and application interlock — interdisciplinary in depth, transdisciplinary in dialogue with partners from society and industry.",
       aboutP2:
         "Operationally, RWTH Innovation bundles that path: valorisation and protection of research results, start-up support, and collaboration with industry — so scientific ideas become application, partnership, and impact.",
+
+      dimTitle: "Eight transfer areas — how to read the landscape",
+      dimIntro:
+        "The landscape follows the Stifterverband Transfer Barometer: eight areas spanning industry collaboration and commercialisation through to dialogue, advice, and teaching. That makes visible how knowledge creates impact at RWTH — not only through patents and start-ups.",
+      dimPrereq:
+        "It rests on institutional prerequisites: strategy, incentives, structures, and resources.",
+      dimFigAlt: "Ring diagram of the eight Transfer Barometer transfer areas",
+      dimFigCaption: "Transfer Barometer systematics (Stifterverband)",
+      dimSourceLink: "Source",
+      dimMapLink: "Transfer areas on the map →",
+      dimCollabTitle: "Research-based collaboration and commercialisation",
+      dimCollabBody:
+        "Joint research with industry and partners — including IP, licensing, and commercialisation.",
+      dimEntreTitle: "Entrepreneurship",
+      dimEntreBody:
+        "Scientific ideas become ventures and business models — from ideation to scale-up.",
+      dimInfraTitle: "Research infrastructure",
+      dimInfraBody:
+        "Labs, facilities, and data as shared infrastructure for partners beyond the university.",
+      dimRelTitle: "Relationship management",
+      dimRelBody:
+        "Long-term networks with alumni, sponsors, and partners — transfer needs lasting relationships.",
+      dimSocietyTitle: "R&D with society",
+      dimSocietyBody:
+        "Research and development with citizens, municipalities, and civil society on real-world challenges.",
+      dimAdviceTitle: "Scientific advice",
+      dimAdviceBody:
+        "Expertise for policymakers, public administration, and other decision-makers.",
+      dimDialogueTitle: "Science dialogue",
+      dimDialogueBody:
+        "Open exchange: science communication and dialogue with the public.",
+      dimTeachTitle: "Transfer-oriented teaching & further education",
+      dimTeachBody:
+        "Practice, partners, and real-world challenges in curricula, schools, and further education.",
 
       modulesTitle: "Ambition — where we are heading",
       modInnovationTitle: "RWTH Innovation",
